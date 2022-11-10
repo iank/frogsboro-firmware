@@ -8,22 +8,24 @@ sudo apt-get install gawk wget git-core git-lfs diffstat unzip texinfo gcc-multi
 git clone git://git.yoctoproject.org/poky -b dunfell                    # 4ddc26f4
 git clone git://git.openembedded.org/meta-openembedded -b dunfell       # 7203130e
 git clone https://github.com/linux4sam/meta-atmel.git -b dunfell        # 428c0677
+git clone https://github.com/iank/meta-frogsboro.git                    # 0c3ed12b
 
 cd poky
-mkdir build-microchip
+mkdir build-frogsboro
 
 # Edit .templateconf
-# export TEMPLATECONF=${TEMPLATECONF:-../meta-atmel/conf}
+echo 'export TEMPLATECONF=${TEMPLATECONF:-../meta-frogsboro/conf}' > .templateconf
 
-source oe-init-build-env build-microchip
+source oe-init-build-env build-frogsboro
 
-MACHINE=sam9x60ek-sd bitbake microchip-headless-image
+MACHINE=sam9x60ek-sd-frogsboro bitbake microchip-headless-image
 ```
 # TODO
 
-- frogsboro BSP layer
 - g_serial gadget
 - rt2870 firmware
 - wifi provisioning
+- ssh key provisioning
 - read-only rootfs
 - tidy up device tree
+- rename machine config
