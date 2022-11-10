@@ -1,5 +1,5 @@
 # Building FROGSBORO image
-
+```
 sudo apt-get install gawk wget git-core git-lfs diffstat unzip texinfo gcc-multilib \
      build-essential chrpath socat cpio python3 python3-pip python3-pexpect \
      xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev \
@@ -13,12 +13,12 @@ cd poky
 mkdir build-microchip
 
 # Edit .templateconf
-export TEMPLATECONF=${TEMPLATECONF:-../meta-atmel/conf}
+# export TEMPLATECONF=${TEMPLATECONF:-../meta-atmel/conf}
 
 source oe-init-build-env build-microchip
 
 MACHINE=sam9x60ek-sd bitbake microchip-headless-image
-
+```
 # TODO
 
 - frogsboro BSP layer
