@@ -8,7 +8,7 @@ sudo apt-get install gawk wget git-core git-lfs diffstat unzip texinfo gcc-multi
 git clone git://git.yoctoproject.org/poky -b dunfell                    # 4ddc26f4
 git clone git://git.openembedded.org/meta-openembedded -b dunfell       # 7203130e
 git clone https://github.com/linux4sam/meta-atmel.git -b dunfell        # 428c0677
-git clone https://github.com/iank/meta-frogsboro.git -b dunfell         # 9129eb7a
+git clone https://github.com/iank/meta-frogsboro.git -b dunfell         # 3cbbaedf
 
 cd poky
 mkdir build-frogsboro
@@ -27,10 +27,6 @@ run it from the build-frogsboro directory
 
 # TODO
 
-- yocto image:
-  - lock root password; sshd configuration
-  - pregenerate sshd host keys
-
 - provisioning:
   - expand data partition
   - clean up script
@@ -39,5 +35,6 @@ run it from the build-frogsboro directory
   - tidy up device tree
   - tidy up u-boot environment
   - rename yocto machine
+  - separate non-BSP (linux configuration) recipes into another layer
 
 - application
