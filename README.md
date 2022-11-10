@@ -1,3 +1,12 @@
+# FROGSBORO
+
+This repository is the entry point for the OS image/software for the FROGSBORO board.
+
+* [Blog post describing the board](https://iank.org/posts/frogsboro-embedded-linux-board-sam9x60-sip)
+* [Design files repository](https://github.com/iank/frogsboro)
+
+![Assembled board](https://iank.org/static/ff2f006408310ffcdee8d97c2bc824bc/aaf0c/frogsboro_top_complete.jpg)
+
 # Building FROGSBORO image
 ```
 sudo apt-get install gawk wget git-core git-lfs diffstat unzip texinfo gcc-multilib \
