@@ -8,7 +8,7 @@ sudo apt-get install gawk wget git-core git-lfs diffstat unzip texinfo gcc-multi
 git clone git://git.yoctoproject.org/poky -b dunfell                    # 4ddc26f4
 git clone git://git.openembedded.org/meta-openembedded -b dunfell       # 7203130e
 git clone https://github.com/linux4sam/meta-atmel.git -b dunfell        # 428c0677
-git clone https://github.com/iank/meta-frogsboro.git -b dunfell         # 60f33353
+git clone https://github.com/iank/meta-frogsboro.git -b dunfell         # 9129eb7a
 
 cd poky
 mkdir build-frogsboro
@@ -16,14 +16,28 @@ echo 'export TEMPLATECONF=${TEMPLATECONF:-../meta-frogsboro/conf}' > .templateco
 
 source oe-init-build-env build-frogsboro
 
-MACHINE=sam9x60ek-sd-frogsboro bitbake microchip-headless-image
+MACHINE=sam9x60ek-sd-frogsboro bitbake frogsboro-headless-image
+
 ```
+
+# Provisioning
+
+After building image as above, or downloading a release image, edit provision.sh and
+run it from the build-frogsboro directory
+
 # TODO
 
+- yocto image:
+  - lock root password; sshd configuration
+  - pregenerate sshd host keys
+
 - provisioning:
-    - wifi
-    - ssh key
-    - hostname
-- tidy up device tree
-- tidy up u-boot environment
-- rename machine config
+  - expand data partition
+  - clean up script
+
+- yocto BSP:
+  - tidy up device tree
+  - tidy up u-boot environment
+  - rename yocto machine
+
+- application
