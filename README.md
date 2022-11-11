@@ -8,7 +8,7 @@ sudo apt-get install gawk wget git-core git-lfs diffstat unzip texinfo gcc-multi
 git clone git://git.yoctoproject.org/poky -b dunfell                    # 4ddc26f4
 git clone git://git.openembedded.org/meta-openembedded -b dunfell       # 7203130e
 git clone https://github.com/linux4sam/meta-atmel.git -b dunfell        # 428c0677
-git clone https://github.com/iank/meta-frogsboro.git -b dunfell         # 3cbbaedf
+git clone https://github.com/iank/meta-frogsboro.git -b dunfell         # b8e0aa0d
 
 cd poky
 mkdir build-frogsboro
@@ -26,6 +26,9 @@ After building image as above, or downloading a release image, edit provision.sh
 run it from the build-frogsboro directory
 
 # TODO
+
+- wifi:
+  - disable LEDs
 
 - provisioning:
   - expand data partition
