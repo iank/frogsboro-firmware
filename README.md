@@ -35,18 +35,14 @@ MACHINE=sam9x60ek-sd-frogsboro bitbake frogsboro-catcam-image
 
 # Provisioning
 
-After building image as above, or downloading a release image, edit provision.sh and
-run it from the build-frogsboro directory. **This script is not safe**. I intend to
-clean it up.
+After building image as above, or downloading a release image, the script in this repository
+can help write the SD card and provision credentials. Please review it before running.
 
 # TODO
 
 - wifi:
   - fix rt2800usb problems or change chipsets
   - disable LEDs
-
-- provisioning:
-  - clean up script
 
 - yocto BSP:
   - tidy up device tree
@@ -55,5 +51,4 @@ clean it up.
   - separate non-BSP (linux configuration) recipes into another layer
 
 - application
-    - passthrough?
-    - signal bot
+    - push

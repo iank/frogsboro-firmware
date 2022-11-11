@@ -1,0 +1,17 @@
+# Set FROG_DEVICE to the block device for your SD card. For example, /dev/mmcblk0. Be careful
+FROG_DEVICE=/dev/XXXX
+
+# An (existing, empty) directory to use as a mount point
+FROG_MNT=/mnt/data
+
+# WiFi SSID
+FROG_SSID=""
+
+# WiFi password
+FROG_PSK=""
+
+# Hostname to use
+FROG_HOSTNAME=""
+
+# Path to an ssh public key
+FROG_SSHKEY=""
