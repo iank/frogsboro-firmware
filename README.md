@@ -5,7 +5,7 @@ This repository is the entry point for the OS image/software for the FROGSBORO b
 * [Blog post describing the board](https://iank.org/posts/frogsboro-embedded-linux-board-sam9x60-sip)
 * [Design files repository](https://github.com/iank/frogsboro)
 
-![Assembled board](https://iank.org/static/ff2f006408310ffcdee8d97c2bc824bc/aaf0c/frogsboro_top_complete.jpg)
+![Assembled board](https://iank.org/static/fd095baec4ae8244d7eccb9bd1d96a66/aaf0c/frogsboro_top_complete.jpg)
 
 # Building FROGSBORO image
 ```
