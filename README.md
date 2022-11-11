@@ -8,7 +8,7 @@ sudo apt-get install gawk wget git-core git-lfs diffstat unzip texinfo gcc-multi
 git clone git://git.yoctoproject.org/poky -b dunfell                    # 4ddc26f4
 git clone git://git.openembedded.org/meta-openembedded -b dunfell       # 7203130e
 git clone https://github.com/linux4sam/meta-atmel.git -b dunfell        # 428c0677
-git clone https://github.com/iank/meta-frogsboro.git -b dunfell         # b8e0aa0d
+git clone https://github.com/iank/meta-frogsboro.git -b dunfell         # 5d843bf8
 
 cd poky
 mkdir build-frogsboro
@@ -18,20 +18,25 @@ source oe-init-build-env build-frogsboro
 
 MACHINE=sam9x60ek-sd-frogsboro bitbake frogsboro-headless-image
 
+# or
+
+MACHINE=sam9x60ek-sd-frogsboro bitbake frogsboro-catcam-image
+
 ```
 
 # Provisioning
 
 After building image as above, or downloading a release image, edit provision.sh and
-run it from the build-frogsboro directory
+run it from the build-frogsboro directory. **This script is not safe**. I intend to
+clean it up.
 
 # TODO
 
 - wifi:
+  - fix rt2800usb problems or change chipsets
   - disable LEDs
 
 - provisioning:
-  - expand data partition
   - clean up script
 
 - yocto BSP:
@@ -41,3 +46,5 @@ run it from the build-frogsboro directory
   - separate non-BSP (linux configuration) recipes into another layer
 
 - application
+    - passthrough?
+    - signal bot
