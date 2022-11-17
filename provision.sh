@@ -43,6 +43,12 @@ __EOF__
 
 sudo chmod 0600 ${FROG_MNT}/wpa_supplicant.conf
 
+# Copy on_movie_end script if applicable
+if [ "x$IMGTYPE" = "xcatcam" ]; then
+    sudo cp $(dirname -- "$0")/on_movie_end.sh ${FROG_MNT}/on_movie_end.sh
+    sudo chmod 0755 ${FROG_MNT}/on_movie_end.sh
+fi
+
 # Unmount
 sudo umount ${FROG_DEVICE}3
 sync

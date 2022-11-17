@@ -17,7 +17,7 @@ sudo apt-get install gawk wget git-core git-lfs diffstat unzip texinfo gcc-multi
 git clone git://git.yoctoproject.org/poky -b dunfell                    # 4ddc26f4
 git clone git://git.openembedded.org/meta-openembedded -b dunfell       # 7203130e
 git clone https://github.com/linux4sam/meta-atmel.git -b dunfell        # 428c0677
-git clone https://github.com/iank/meta-frogsboro.git -b dunfell         # 0868247a
+git clone https://github.com/iank/meta-frogsboro.git -b v1.0.0
 
 cd poky
 mkdir build-frogsboro
@@ -38,10 +38,13 @@ MACHINE=sam9x60ek-sd-frogsboro bitbake frogsboro-catcam-image
 After building image as above, or downloading a release image, the script in this repository
 can help write the SD card and provision credentials. Please review it before running.
 
+You need to copy config.inc.sample to config.inc and edit it.
+
+For the catcam image, also copy on_movie_end.sh.sample to on_movie_end.sh and edit it.
+
 # TODO
 
 - yocto BSP:
-  - ntp
   - tidy up device tree
   - tidy up u-boot environment
   - rename yocto machine
@@ -49,6 +52,3 @@ can help write the SD card and provision credentials. Please review it before ru
 
 - application
     - document pi side
-    - include on_movie_end script/config in yocto recipe
-        - include a boilerplate script in yocto, provision actual script
-        - thumbnail

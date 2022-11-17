@@ -1,0 +1,16 @@
+#!/bin/bash
+SOURCE="+1xxxXXXYYYY"
+DEST="+1aaaAAABBBB"
+
+VID="$(base64 $1)"
+export TZ='America/New_York'
+MESSAGE=$(date "+%F %H:%M:%S")
+
+ffmpeg -i $1 -vf "thumbnail=300" -frames:v 1 $1.png
+THM="$(base64 $1.png)"
+
+echo '{"message": "'"$MESSAGE"'", ' \
+     '"base64_attachments": ["'"$VID"'","'"$THM"'"], ' \
+     '"number": "'"$SOURCE"'", ' \
+     '"recipients": ["'"$DEST"'"]}' \
+| curl -X POST -H "Content-Type: application/json" -d @- 'http://example.com:8080/v2/send'
