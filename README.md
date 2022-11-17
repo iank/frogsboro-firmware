@@ -17,7 +17,7 @@ sudo apt-get install gawk wget git-core git-lfs diffstat unzip texinfo gcc-multi
 git clone git://git.yoctoproject.org/poky -b dunfell                    # 4ddc26f4
 git clone git://git.openembedded.org/meta-openembedded -b dunfell       # 7203130e
 git clone https://github.com/linux4sam/meta-atmel.git -b dunfell        # 428c0677
-git clone https://github.com/iank/meta-frogsboro.git -b dunfell         # 5d843bf8
+git clone https://github.com/iank/meta-frogsboro.git -b dunfell         # 0868247a
 
 cd poky
 mkdir build-frogsboro
