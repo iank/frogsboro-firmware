@@ -49,6 +49,7 @@ sync
 
 # Resize data partition to fill SD card
 sudo parted ${FROG_DEVICE} resizepart 3 100% -s
+sleep 1
 sudo e2fsck -f ${FROG_DEVICE}3
 sudo resize2fs ${FROG_DEVICE}3
 
