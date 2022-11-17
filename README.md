@@ -40,15 +40,15 @@ can help write the SD card and provision credentials. Please review it before ru
 
 # TODO
 
-- wifi:
-  - fix rt2800usb problems or change chipsets
-  - disable LEDs
-
 - yocto BSP:
+  - ntp
   - tidy up device tree
   - tidy up u-boot environment
   - rename yocto machine
   - separate non-BSP (linux configuration) recipes into another layer
 
 - application
-    - push
+    - document pi side
+    - include on_movie_end script/config in yocto recipe
+        - include a boilerplate script in yocto, provision actual script
+        - thumbnail
