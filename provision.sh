@@ -43,6 +43,23 @@ __EOF__
 
 sudo chmod 0600 ${FROG_MNT}/wpa_supplicant.conf
 
+# Set up /etc/network/interfaces
+sudo tee "${FROG_MNT}/interfaces" > /dev/null <<__EOF__
+# The loopback interface
+auto lo
+iface lo inet loopback
+
+# Wireless interfaces
+auto wlan0
+iface wlan0 inet dhcp
+        wireless_mode managed
+        wireless_essid any
+        wpa-driver wext
+        wpa-conf /data/wpa_supplicant.conf
+        hostname ${FROG_HOSTNAME}
+__EOF__
+
+
 # Copy on_movie_end script if applicable
 if [ "x$IMGTYPE" = "xcatcam" ]; then
     sudo cp $(dirname -- "$0")/on_movie_end.sh ${FROG_MNT}/on_movie_end.sh
